@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+  <meta name = "viewport" content = "width=device-width,inital-scale=1.0">
+  <title>Calculator</title>
+  
+  <link rel="stylesheet" type="text/css" href="jc-style.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="buttons">
+    <input type="text" id="result" disabled>
+    
+              <!--first row-->
+    <button id="clear" onclick="clearCalculation()">c</button>
+    <button id="divide" onclick="calculator(' / ')">/</button>
+    <button id="times" onclick="calculator(' * ')">x</button>
+
+              <!--second row-->
+    <button onclick="calculator('7')">7</button>
+    <button onclick="calculator('8')">8</button>
+    <button onclick="calculator('9')">9</button>
+    <button id="minus" onclick="calculator(' - ')">-</button>
+   
+              <!--third row-->
+    <button onclick="calculator('4')">4</button>
+    <button onclick="calculator('5')">5</button>
+    <button onclick="calculator('6')">6</button>
+    <button id="plus" onclick="calculator(' + ')">+</button>
+
+              <!--fourth row-->
+    <button onclick="calculator('1')">1</button>
+    <button onclick="calculator('2')">2</button>
+    <button onclick="calculator('3')">3</button>
+
+              <!--fifth row-->
+    <button onclick="calculator('0')">0</button>
+    <button onclick="calculator('00')">00</button>
+    <button id="dot" onclick="calculator('.')">.</button>
+    <button id="equal" onclick="evalCalculate()">=</button>
+    
+ 
+  </div>
+</div>
+
+<script>
+
+  let calculate = '';
+
+  function calculator(updateCalculate){
+    calculate += updateCalculate;
+    document.getElementById('result').value = calculate;
+    console.log(calculate);
+  }
+
+  function evalCalculate(){
+      calculate = eval(calculate);
+      document.getElementById('result').value = calculate;
+      console.log(calculate);
+    }
+
+    function clearCalculation(){
+      calculate = '';
+      document.getElementById('result').value = calculate;
+      console.log(calculate);
+    }
+
+</script>
+
+</body>
+</html>
